@@ -1,18 +1,7 @@
-.header {
-    background-color: #fff;
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 1rem 3.5rem;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+
   
   .logo {
-   padding: 10px;
+   padding-bottom: 10px;
   }
 
   .logo__img{
@@ -32,9 +21,7 @@
 
   }
 
-  .logo__mobo{
-    display: none;
-  }
+ 
   
   .nav {
     display: flex;
@@ -52,11 +39,7 @@
     line-height: 130%;
   }
   
-  .icons {
-    display: flex;
-    gap: 1.25rem;
-    padding: 0 0.5rem;
-  }
+
   
   .search {
     display: flex;

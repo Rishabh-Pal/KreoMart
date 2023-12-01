@@ -66,13 +66,15 @@
  
     --ring: 217.2 32.6% 17.5%;
   }
+  /* change font size form 16 to 10 px */
+  html {
+    font-size: 10px;
+  }
 }
  
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
     @apply bg-background text-foreground;
   }
 }
+

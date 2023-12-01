@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const Forget = () => {
     const [username, setUsername] = useState('');
@@ -10,31 +11,33 @@ const Forget = () => {
   };
   return (
     <div className=" flex items-center justify-center">
-      <div className=" mx-20 rounded-2xl items-center justify-center">
-        <div className="items-center">
+      <div className=" rounded-2xl items-center max-w-lg md:max-w-4xl justify-center">
+        <div className="items-center  text-sm md:text-md">
 
         <form
-          className="mt-6 mx-20 w-[500px]"
+          className="mt-6 mx-20 "
           onSubmit={handleSubmit}
           action="#"
           method="POST"
         >
           <div>
             <div className="text-center justify-center">
-              <img
-                className="mx-auto p-2 w-[50px]"
+              <Image
+                className="mx-auto p-2 "
                 src="./assets/logo-mobo.svg"
                 alt="Logo"
+                width={40}
+                height={40}
               />
             </div>
-            <h2 className="text-2xl font-bold text-[#030822] text-center ">
+            <h2 className="text-2xl font-bold text-[#030822] text-center mb-10">
             Forgot password
             </h2>
           </div >
-              <p className="justify-center">
+              <div className=" text-center mb-5">
               In order to change your password, we need to verify your identity. 
 Enter the email address or mobile phone number associated with your Kreomart account.
-              </p>
+              </div>
           <div>
               <label className="block w-full text-gray-700">User Name</label>
               <input

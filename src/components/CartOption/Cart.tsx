@@ -1,95 +1,37 @@
-import React, { useState } from "react";
-import Image from "next/image";
+"use client";
+import React, { useEffect, useState } from "react";
 
-import img2 from "../../../public/assets/img2.png";
-import Icon from "../../../public/assets/Icon.png";
-import Ticket from "../../../public/assets/Ticket.png";
-import Line from "../../../public/assets/Line.png";
 import CartObject from "./CartObject";
-import LikedIcon from "../../../public/assets/Favourite-liked.png";
+import Checkout from "./Checkout";
+import { UseCartStore } from "@/store/store";
+import { CartDetail } from "../../../typings";
+  
 
-import Button from "./Button";
-import ArrowButton from "./ArrowButton";
+const Cart = () => {
+  const { cart, getAllCart } = UseCartStore((state)=>({cart:state.cart, getAllCart:state.getAllCart}));
 
-// interface CartData {
-//   id: number;
-//   title: string;
-//   quantity: string;
-//   size: string;
-//   color: string;
-//   image:string;
-// }
-
-function Cart() {
-  const [liked, setLiked] = useState(false);
-
-  const handleLikeClick = () => {
-    setLiked(!liked);
-  };
-
+  useEffect(()=>{
+    getAllCart();
+  }, [getAllCart])
+  console.log("this is cart store data: ", cart);
   return (
-    <div className="flex px-20 justify-center">
-      <div className="flex flex-col">
-
-      <CartObject/>
-      <CartObject/>
-      <CartObject/>
-      </div>
-      <div className="">
-        <div className="flex">
-          <div>
-            <Image src={Ticket} alt="co" />
-          </div>
-          <div className="flex">
-            
-
-          <div className="flex-item">
-            Apply coupon
-          </div> 
-          <div className="flex-item">
-            <ArrowButton />
-          </div>
-          </div>
-        </div>
-        <div className="">
-          <div className="flex gap-4 justify-between">
-            <div className="">Order summary</div>
-            <div>AHDT216793SGYEV</div>
-          </div>
-          <div className="">
-            <div className="">
-              <div className=" flex justify-between">
-                <div className="">Subtotal</div>
-                <div className="">₹468</div>
-              </div>
-              <div className=" flex justify-between">
-                <div className="">Discount</div>
-                <div className="">
-                  {/* <Image className="line" alt="Line" src={Line} /> */}
-                  <div className="text-[#11DCAD]">-₹68</div>
-                </div>
-              </div>
-              <div className="flex justify-between">
-                <div className="">Convenience fee</div>
-                <div className="">₹30</div>
-              </div>
-              <div className="flex text-[#030822] text-xl justify-between">
-                <div> You Pay</div>
-                <div>₹430</div>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full  bg-[#020044] hover:bg-blue-400 focus:bg-blue-400 text-white font-semibold  px-4 py-3 mt-6"
-              >
-                Checkout
-              </button>
+    <>
+      <div className="flex flex-col gap-6 md:flex-row m-auto justify-center p-4 text-center">
+        {/* <div className="flex-row w-1/2 m-auto  bg-white "> */}
+        <div className="flex-item w-[340px] md:w-[600px] relative bg-white flex-row mx-auto md:mx-0 justify-center gap-[12px] p-4 text-base ">
+          {cart?.cart_item?.map((item, index) => (
+            <div key={index}>
+              <CartObject data={item} />
             </div>
-          </div>
+          ))}
+        </div>
+        <div className="flex justify-center">
+          <Checkout />
         </div>
       </div>
-    </div>
+      
+    </>
   );
-}
+};
 
 export default Cart;

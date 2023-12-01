@@ -12,11 +12,12 @@ const Products = () => {
   const handleLikeClick = () => {
     setLiked(!liked);
   };
+  
   return (
-    <div>
-      <div className={styles.related_products} >
-        <Image className={styles.product_img} src={imgrp} alt='product-related'/>
-        <Image className={styles.unlike_icon} src={liked? LikedIcon: Icon} onClick={handleLikeClick} alt='Like'/>
+    <div className='w-[200px] text-[12px]'>
+      <div className="relative">
+        <Image className="object-cover w-full h-auto mr-0" src={imgrp} alt='product-related' />
+        <Image className= "absolute bottom-5 right-5 cursor-pointer" src={liked? LikedIcon: Icon} onClick={handleLikeClick} alt='Like'/>
       </div>
       <div>
         <div>Zip-through hoodie</div> 
