@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react"; 
+import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Icon from "../../../public/assets/Favourite=False.png";
@@ -47,7 +47,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                   alt="Product Image"
                   className="object-cover  w-full h-full  "
                   width={260}
-                  height={320} 
+                  height={320}
                 />
               </div>
             </div>
@@ -85,12 +85,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               </span>
             </div>
             <div>
-          <button className="w-2 h-2 mx-0.5 rounded-full bg-red-default text-white hover:bg-blue-600 focus:outline-none"></button>
-          <button className="w-2 h-2 mx-0.5 rounded-full bg-orange-default text-white hover:bg-blue-600 focus:outline-none"></button>
-          <button className="w-2 h-2 mx-0.5 rounded-full bg-blue-default text-white hover:bg-blue-600 focus:outline-none"></button>
-          <button className="w-2 h-2 mx-0.5 rounded-full bg-yellow-default text-white hover:bg-blue-600 focus:outline-none"></button>
-          <button className="w-2 h-2 mx-0.5 rounded-full bg-secondary text-white hover:bg-blue-600 focus:outline-none"></button>
-        </div>
+              <button className="w-2 h-2 mx-0.5 rounded-full bg-red-default text-white hover:bg-blue-600 focus:outline-none"></button>
+              <button className="w-2 h-2 mx-0.5 rounded-full bg-orange-default text-white hover:bg-blue-600 focus:outline-none"></button>
+              <button className="w-2 h-2 mx-0.5 rounded-full bg-blue-default text-white hover:bg-blue-600 focus:outline-none"></button>
+              <button className="w-2 h-2 mx-0.5 rounded-full bg-yellow-default text-white hover:bg-blue-600 focus:outline-none"></button>
+              <button className="w-2 h-2 mx-0.5 rounded-full bg-secondary text-white hover:bg-blue-600 focus:outline-none"></button>
+            </div>
           </div>
         </div>
       </Link>
